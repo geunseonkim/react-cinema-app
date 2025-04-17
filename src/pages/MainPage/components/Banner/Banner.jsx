@@ -1,6 +1,8 @@
 import React from "react";
 import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import Carousel from "../Carousel/Carousel";
+import PopularMovies from "../PopularMovies/PopularMovies";
+import NowShowingMovies from "../NowShowingMovies/NowShowingMovies";
 
 const Banner = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
@@ -10,6 +12,8 @@ const Banner = () => {
   return (
     <div>
       <Carousel items={data?.results.slice(0, 3)} />
+      <PopularMovies />
+      <NowShowingMovies />
     </div>
   );
 };

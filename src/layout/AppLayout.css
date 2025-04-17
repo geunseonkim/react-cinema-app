@@ -42,7 +42,7 @@
 
 .search-form button {
   padding: 0.5rem;
-  background-color: #ccc;
+  background: #ccc;
   color: white;
   border: 1px solid #ccc;
   border-radius: 4px;

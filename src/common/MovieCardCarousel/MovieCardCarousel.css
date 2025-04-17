@@ -1,0 +1,54 @@
+.movie-card-carousel-container {
+  position: relative;
+}
+
+.movie-card-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.movie-card-wrapper.scrollable {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.movie-card-slider {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.5s ease;
+}
+
+.movie-card-carousel-slide {
+  min-width: calc((100% - 120px) / 7);
+  flex-shrink: 0;
+}
+
+.card-carousel-arrow {
+  position: absolute;
+  height: 100%;
+  background: black;
+  border: none;
+  opacity: 50%;
+  width: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+.card-carousel-arrow.right {
+  top: 0%;
+  right: 0%;
+}
+.card-carousel-arrow.left {
+  top: 0%;
+  left: 0%;
+}
+
+@media (max-width: 1024px) {
+  .card-carousel-arrow {
+    display: none;
+  }
+}

@@ -55,6 +55,7 @@
   display: inline-block;
   background: white;
   margin-right: 6px;
+  cursor: pointer;
 }
 
 .indicator.active {
