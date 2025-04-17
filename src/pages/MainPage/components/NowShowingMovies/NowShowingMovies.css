@@ -1,0 +1,12 @@
+.now-showing-container {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.now-showing-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: -0.5px;
+  color: #bb0000;
+}

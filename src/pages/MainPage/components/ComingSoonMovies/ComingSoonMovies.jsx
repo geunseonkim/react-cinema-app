@@ -1,23 +1,23 @@
 import React from "react";
-import { useNowShowingMoviesQuery } from "../../../../hooks/useNowShowingMovies";
-import "./NowShowingMovies.css";
+import { useComingSoonMoviesQuery } from "../../../../hooks/useComingSoonMovies";
 import MovieCardCarousel from "../../../../common/MovieCardCarousel/MovieCardCarousel";
 
-const NowShowingMovies = () => {
+const ComingSoonMovies = () => {
   const {
-    data: nowShowingData,
+    data: comingSoonData,
     isLoading,
     isError,
     error,
-  } = useNowShowingMoviesQuery();
+  } = useComingSoonMoviesQuery();
 
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) return <alert>{error.message}</alert>;
+
   return (
     <div>
-      <MovieCardCarousel items={nowShowingData?.results} />
+      <MovieCardCarousel items={comingSoonData?.results} />
     </div>
   );
 };
 
-export default NowShowingMovies;
+export default ComingSoonMovies;

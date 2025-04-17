@@ -1,0 +1,28 @@
+.movie-list-name {
+  margin-top: 40px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.movie-list-action {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: -0.5px;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.movie-list-action.active {
+  color: #bb0000;
+  /* text-decoration: underline; */
+}
+
+@media screen and (max-width: 767px) {
+  .movie-list-action {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
