@@ -30,7 +30,7 @@ const MoviePage = () => {
     isLoading: genreIsLoading,
     isError: genreIsError,
     error: genreError,
-  } = useMovieGenreQuery({ keyword });
+  } = useMovieGenreQuery();
 
   const {
     data: searchData,

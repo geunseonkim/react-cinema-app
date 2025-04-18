@@ -1,11 +1,11 @@
 import React from "react";
 import "./MovieDetailModal.css";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
+import MovieTrailer from "./components/MovieTrailer/MovieTrailer";
 
 const MovieDetailModal = ({ item, type, handleCloseModal }) => {
   const { data: genreData, isLoading, isError, error } = useMovieGenreQuery();
 
-  console.log("genreData", genreData);
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) return <alert>{error.message}</alert>;
 
@@ -27,7 +27,7 @@ const MovieDetailModal = ({ item, type, handleCloseModal }) => {
         </button>
 
         {type === "play" ? (
-          <div className="modal-trailer"></div>
+          <MovieTrailer itemId={item.id} />
         ) : (
           <div className="modal-content">
             <div className="modal-content-detail">
