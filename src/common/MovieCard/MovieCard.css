@@ -2,11 +2,12 @@
   position: relative;
   width: 100%;
   /* max-width: 200px; */
-  min-width: 195px;
+  width: 195px;
   height: 400px;
   margin: auto;
   text-align: center;
   border: 1px solid #eee;
+  margin-bottom: 60px;
 }
 
 .movie-card-wrap img {

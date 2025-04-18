@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import "./AppLayout.css";
 import { Link } from "react-router-dom";
 
 const AppLayout = () => {
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+
+  const searchByKeyword = (e) => {
+    e.preventDefault();
+    navigate(`/movie?q=${keyword}`);
+  };
   return (
     <>
       <div className="nav-container">
         <header className="header">
-          <h1>EventCinema</h1>
+          <Link to="/">
+            <h1>EventCinema</h1>
+          </Link>
           <nav>
             <Link to="/">Home</Link>
             <Link to="/movie">Movies</Link>
@@ -16,8 +25,14 @@ const AppLayout = () => {
         </header>
         <div style={{ flexGrow: 1 }}></div>
 
-        <form className="search-form">
-          <input type="text" placeholder="Search" />
+        <form className="search-form" onSubmit={searchByKeyword}>
+          <input
+            type="text"
+            placeholder="Search"
+            value={keyword}
+            onChange={(e) => setKeyword(e.target.value)}
+            onFocus={() => setKeyword("")}
+          />
           <button type="submit">Search</button>
         </form>
       </div>

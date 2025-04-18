@@ -1,0 +1,10 @@
+.movies-container {
+  display: flex;
+  gap: 20px;
+  padding: 100px;
+}
+
+.movies-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}

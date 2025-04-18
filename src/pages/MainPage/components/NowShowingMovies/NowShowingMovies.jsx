@@ -3,7 +3,7 @@ import { useNowShowingMoviesQuery } from "../../../../hooks/useNowShowingMovies"
 import "./NowShowingMovies.css";
 import MovieCardCarousel from "../../../../common/MovieCardCarousel/MovieCardCarousel";
 
-const NowShowingMovies = () => {
+const NowShowingMovies = ({ openModal }) => {
   const {
     data: nowShowingData,
     isLoading,
@@ -15,7 +15,10 @@ const NowShowingMovies = () => {
   if (isError) return <alert>{error.message}</alert>;
   return (
     <div>
-      <MovieCardCarousel items={nowShowingData?.results} />
+      <MovieCardCarousel
+        items={nowShowingData?.results}
+        openModal={openModal}
+      />
     </div>
   );
 };

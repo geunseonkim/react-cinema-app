@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import "./MovieCardCarousel.css";
 
-const MovieCardCarousel = ({ items }) => {
+const MovieCardCarousel = ({ items, openModal }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardPerPage = 7;
@@ -42,7 +42,7 @@ const MovieCardCarousel = ({ items }) => {
           >
             {items?.map((item, i) => (
               <div className="movie-card-carousel-slide">
-                <MovieCard key={item.id} item={item} />
+                <MovieCard key={item.id} item={item} openModal={openModal} />
               </div>
             ))}
           </div>

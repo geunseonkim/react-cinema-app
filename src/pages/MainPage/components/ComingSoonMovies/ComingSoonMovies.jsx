@@ -2,7 +2,7 @@ import React from "react";
 import { useComingSoonMoviesQuery } from "../../../../hooks/useComingSoonMovies";
 import MovieCardCarousel from "../../../../common/MovieCardCarousel/MovieCardCarousel";
 
-const ComingSoonMovies = () => {
+const ComingSoonMovies = ({ openModal }) => {
   const {
     data: comingSoonData,
     isLoading,
@@ -15,7 +15,10 @@ const ComingSoonMovies = () => {
 
   return (
     <div>
-      <MovieCardCarousel items={comingSoonData?.results} />
+      <MovieCardCarousel
+        items={comingSoonData?.results}
+        openModal={openModal}
+      />
     </div>
   );
 };
