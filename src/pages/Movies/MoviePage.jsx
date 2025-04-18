@@ -6,6 +6,7 @@ import "./MoviePage.css";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 import MovieDropdown from "../../common/MovieDropdown/MovieDropdown";
 import MovieDetailModal from "../../common/MovieDetailModal/MovieDetailModal";
+import ReactPaginate from "react-paginate";
 
 const MoviePage = () => {
   const [query, setQuery] = useSearchParams();
@@ -14,6 +15,7 @@ const MoviePage = () => {
   const [selectedGenre, setSelectedGenre] = useState("");
   const [modalItem, setModalItem] = useState(null);
   const [modalType, setModalType] = useState("");
+  const [page, setPage] = useState(1);
 
   const handleOpenModal = (item, type) => {
     setModalItem(item);
@@ -37,7 +39,7 @@ const MoviePage = () => {
     isLoading: searchIsLoading,
     isError: searchIsError,
     error: searchError,
-  } = useSearchMovieQuery({ keyword });
+  } = useSearchMovieQuery({ keyword, page });
 
   if (genreIsLoading || searchIsLoading) return <h1>Loading...</h1>;
   if (genreIsError || searchIsError)
@@ -56,6 +58,10 @@ const MoviePage = () => {
       return new Date(a.release_date) - new Date(b.release_date);
     if (selectedOption === "popular") return b.popularity - a.popularity;
   });
+  console.log("ooo", searchData);
+  const handlePageClick = ({ selected }) => {
+    setPage(selected + 1);
+  };
 
   return (
     <div className="movies-container">
@@ -68,9 +74,35 @@ const MoviePage = () => {
       </div>
 
       <div className="movies-cards-wrapper">
-        {sortedMovies.map((item) => (
-          <MovieCard key={item.id} item={item} openModal={handleOpenModal} />
-        ))}
+        <div className="movies-cards-content">
+          {sortedMovies.map((item) => (
+            <MovieCard key={item.id} item={item} openModal={handleOpenModal} />
+          ))}
+        </div>
+
+        <div>
+          <ReactPaginate
+            nextLabel="next >"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            marginPagesDisplayed={2}
+            pageCount={searchData?.total_pages} // 전체
+            previousLabel="< previous"
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-item"
+            previousLinkClassName="page-link"
+            nextClassName="page-item"
+            nextLinkClassName="page-link"
+            breakLabel="..."
+            breakClassName="page-item"
+            breakLinkClassName="page-link"
+            containerClassName="pagination"
+            activeClassName="active"
+            renderOnZeroPageCount={null}
+            forcePage={page - 1} //bc 0부터 카운트
+          />
+        </div>
       </div>
 
       {modalItem && (

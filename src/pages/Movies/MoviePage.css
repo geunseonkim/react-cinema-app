@@ -16,9 +16,57 @@
 
 .movies-cards-wrapper {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
   flex: 1;
+}
+
+.movies-cards-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex: 1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 1rem 0;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.page-item {
+  cursor: pointer;
+}
+
+.page-link {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #333;
+  background: #fff;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.page-link:hover {
+  background: #f0f0f0;
+}
+
+.active .page-link {
+  background: red;
+  color: #fff;
+  border-color: red;
+}
+
+.page-item.disabled .page-link {
+  color: #ccc;
+  pointer-events: none;
+  background: #f8f9fa;
+  border-color: #dee2e6;
 }
 
 @media screen and (max-width: 767px) {
