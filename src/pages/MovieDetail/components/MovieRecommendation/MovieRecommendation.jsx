@@ -3,6 +3,7 @@ import { useMovieRecommendationsQuery } from "../../../../hooks/useMovieRecommen
 import { useParams } from "react-router-dom";
 import MovieCardCarousel from "../../../../common/MovieCardCarousel/MovieCardCarousel";
 import "./MovieRecommendation.css";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const MovieRecommendation = () => {
   const { id } = useParams();
@@ -16,7 +17,19 @@ const MovieRecommendation = () => {
     movie_id: id,
   });
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "400px",
+        }}
+      >
+        <ClipLoader color="red" loading={isLoading} size={150} />
+      </div>
+    );
   if (isError) return <div>{error.message}</div>;
 
   console.log("dd", RecommendationData);

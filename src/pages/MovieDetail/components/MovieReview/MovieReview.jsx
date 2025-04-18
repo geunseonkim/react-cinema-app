@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./MovieReview.css";
 import { useMovieReviewQuery } from "../../../../hooks/useMovieReview";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const MovieReview = () => {
   const { id } = useParams();
@@ -24,7 +25,19 @@ const MovieReview = () => {
     }));
   };
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "400px",
+        }}
+      >
+        <ClipLoader color="red" loading={isLoading} size={150} />
+      </div>
+    );
   if (isError) return <div>{error.message}</div>;
 
   return (

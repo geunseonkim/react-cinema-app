@@ -7,6 +7,7 @@ import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 import MovieDropdown from "../../common/MovieDropdown/MovieDropdown";
 import MovieDetailModal from "../../common/MovieDetailModal/MovieDetailModal";
 import ReactPaginate from "react-paginate";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const MoviePage = () => {
   const [query, setQuery] = useSearchParams();
@@ -41,7 +42,24 @@ const MoviePage = () => {
     error: searchError,
   } = useSearchMovieQuery({ keyword, page });
 
-  if (genreIsLoading || searchIsLoading) return <h1>Loading...</h1>;
+  if (genreIsLoading || searchIsLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "400px",
+        }}
+      >
+        <ClipLoader
+          color="red"
+          loading={genreIsLoading || searchIsLoading}
+          size={150}
+        />
+      </div>
+    );
+
   if (genreIsError || searchIsError)
     return <alert>{genreError.message || searchError.message}</alert>;
 

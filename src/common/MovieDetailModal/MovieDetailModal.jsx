@@ -2,11 +2,24 @@ import React from "react";
 import "./MovieDetailModal.css";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
 import MovieTrailer from "./components/MovieTrailer/MovieTrailer";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const MovieDetailModal = ({ item, type, handleCloseModal }) => {
   const { data: genreData, isLoading, isError, error } = useMovieGenreQuery();
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "400px",
+        }}
+      >
+        <ClipLoader color="red" loading={isLoading} size={150} />
+      </div>
+    );
   if (isError) return <alert>{error.message}</alert>;
 
   //***

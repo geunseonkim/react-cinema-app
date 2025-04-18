@@ -5,6 +5,7 @@ import MovieDetailBanner from "./components/MovieDetailBanner/MovieDetailBanner"
 import MovieDetailInfo from "./components/MovieDetailInfo/MovieDetailInfo";
 import MovieReview from "./components/MovieReview/MovieReview";
 import MovieRecommendation from "./components/MovieRecommendation/MovieRecommendation";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -18,7 +19,19 @@ const MovieDetailPage = () => {
     movie_id: id,
   });
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "400px",
+        }}
+      >
+        <ClipLoader color="red" loading={isLoading} size={150} />
+      </div>
+    );
   if (isError) return <alert>{error.message}</alert>;
 
   return (

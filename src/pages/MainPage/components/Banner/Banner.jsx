@@ -3,11 +3,24 @@ import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 import Carousel from "../Carousel/Carousel";
 import NowShowingMovies from "../NowShowingMovies/NowShowingMovies";
 import "./Banner.css";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Banner = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "400px",
+        }}
+      >
+        <ClipLoader color="red" loading={isLoading} size={150} />
+      </div>
+    );
   if (isError) return <alert>{error.message}</alert>;
   return (
     <div>
