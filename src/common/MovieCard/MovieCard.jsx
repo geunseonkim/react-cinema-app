@@ -12,8 +12,9 @@ const MovieCard = ({ item, openModal }) => {
       <div className="movie-card-container">
         <div className="movie-card-wrap">
           <img
+            loading="lazy"
             onClick={goToMovieDetail}
-            src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w342${item.poster_path}`}
           />
           <div className="movie-card-actions">
             <button onClick={() => openModal(item, "play")} className="left">

@@ -7,9 +7,7 @@ const MovieDetailInfo = ({ item }) => {
     <div>
       <div className="movie-detail-container">
         <div className="movie-detail-poster">
-          <img
-            src={`https://image.tmdb.org/t/p/original${item?.poster_path}`}
-          />
+          <img src={`https://image.tmdb.org/t/p/w500${item?.poster_path}`} />
           <button>▶︎</button>
         </div>
 

@@ -21,7 +21,7 @@ const ComingSoonMovies = ({ openModal }) => {
           height: "400px",
         }}
       >
-        <ClipLoader color="red" loading={isLoading} size={150} />
+        {/* <ClipLoader color="red" loading={isLoading} size={150} /> */}
       </div>
     );
   if (isError) return <alert>{error.message}</alert>;
