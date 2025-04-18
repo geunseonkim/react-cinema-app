@@ -1,7 +1,7 @@
 .carousel-container {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: auto;
   overflow: hidden;
 }
@@ -21,6 +21,7 @@
   border: none;
   cursor: pointer;
   padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.57);
 }
 
 .left {

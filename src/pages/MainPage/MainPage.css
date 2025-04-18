@@ -1,6 +1,6 @@
 .movie-list-name {
   margin-top: 40px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
   text-align: center;
 }
 
@@ -17,12 +17,28 @@
 
 .movie-list-action.active {
   color: #bb0000;
-  /* text-decoration: underline; */
+  text-decoration: underline;
+}
+
+.movie-commercial {
+  padding: 100px 0px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
 @media screen and (max-width: 767px) {
   .movie-list-action {
     font-size: 1rem;
     font-weight: 400;
+  }
+
+  .movie-commercial {
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }

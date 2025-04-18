@@ -59,20 +59,18 @@ const MoviePage = () => {
 
   return (
     <div className="movies-container">
-      <div>
-        <div className="movies-cards-wrapper">
-          {sortedMovies.map((item, i) => (
-            <MovieCard item={item} openModal={handleOpenModal} />
-          ))}
-        </div>
-      </div>
-
-      <div>
+      <div className="filter-sidebar">
         <MovieDropdown
           genreData={genreData}
           setSelectedOption={setSelectedOption}
           setSelectedGenre={setSelectedGenre}
         />
+      </div>
+
+      <div className="movies-cards-wrapper">
+        {sortedMovies.map((item) => (
+          <MovieCard key={item.id} item={item} openModal={handleOpenModal} />
+        ))}
       </div>
 
       {modalItem && (

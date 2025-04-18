@@ -1,0 +1,25 @@
+.review-container {
+  margin-top: 320px;
+  padding: 0px 60px;
+}
+
+.read-more {
+  color: blue;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.review-item {
+  margin-bottom: 30px;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: black;
+}
+
+@media screen and (max-width: 767px) {
+  .review-container {
+    margin-top: 400px;
+  }
+}

@@ -1,0 +1,48 @@
+.movie-dropdown-container {
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.dropdown-wrapper {
+  margin-bottom: 1rem;
+}
+
+.dropdown-select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+.dropdown-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.genre-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.genre-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background: #eee;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.genre-button:hover {
+  background-color: #dcdcdc;
+}
+
+.genre-button:active {
+  background-color: #ccc;
+}

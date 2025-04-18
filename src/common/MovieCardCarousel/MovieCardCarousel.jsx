@@ -53,7 +53,7 @@ const MovieCardCarousel = ({ items, openModal }) => {
             onClick={handleCardCarouselPrev}
             className="card-carousel-arrow left"
           >
-            앞
+            &lt;
           </button>
         )}
         {!isMobile && currentIndex < totalPage - 1 && (
@@ -61,7 +61,7 @@ const MovieCardCarousel = ({ items, openModal }) => {
             onClick={handleCardCarouselNext}
             className="card-carousel-arrow right"
           >
-            뒤
+            &gt;
           </button>
         )}
       </div>

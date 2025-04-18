@@ -21,10 +21,10 @@ const Carousel = ({ items }) => {
         </div>
 
         <button onClick={handleCarouselPrev} className="carousel-arrow left">
-          앞
+          &lt;
         </button>
         <button onClick={handleCarouselNext} className="carousel-arrow right">
-          뒤
+          &gt;
         </button>
 
         <div className="carousel-movie-info">

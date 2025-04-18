@@ -1,7 +1,8 @@
 .nav-container {
   display: flex;
-  height: 10vh;
+  height: 9vh;
   align-items: center;
+  background: black;
 }
 
 .header {
@@ -15,16 +16,22 @@
   font-size: 2rem;
   cursor: pointer;
   line-height: 1;
+  color: white;
 }
 
 .header a {
   vertical-align: middle;
   margin-right: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   text-decoration: none;
   color: black;
   line-height: 1;
+  color: white;
+}
+
+.header a:hover {
+  color: gray;
 }
 
 .search-form {
@@ -42,9 +49,9 @@
 
 .search-form button {
   padding: 0.5rem;
-  background: #ccc;
-  color: white;
-  border: 1px solid #ccc;
+  background: white;
+  color: black;
+  border: 1px solid white;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
@@ -52,18 +59,53 @@
 
 @media screen and (max-width: 767px) {
   .nav-container {
-    display: flex;
     flex-direction: column;
-    min-height: 100px; /* 또는 height: auto; */
+    align-items: stretch;
+    padding: 1rem;
+    gap: 1rem;
+    height: auto;
   }
+
   .header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
+
+  .header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  .header nav {
+    display: flex;
+    gap: 1rem;
+  }
+
   .search-form {
-    padding: 1rem 0rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0;
   }
+
+  .search-form input {
+    flex: 1;
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .search-form button {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #f5f5f5;
+  }
+
   .main-content {
-    margin-top: 4rem;
+    margin-top: 2rem;
+    /* padding: 0 1rem; */
   }
 }

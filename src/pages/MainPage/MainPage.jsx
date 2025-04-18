@@ -54,6 +54,12 @@ const MainPage = () => {
           handleCloseModal={handleCloseModal}
         />
       )}
+
+      <div className="movie-commercial">
+        <img src="https://tpc.googlesyndication.com/simgad/8497336715466558815" />
+        <img src="https://tpc.googlesyndication.com/simgad/9337378248244643773" />
+        <img src="https://tpc.googlesyndication.com/simgad/5556296936666401284" />
+      </div>
     </div>
   );
 };

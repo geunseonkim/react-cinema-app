@@ -14,6 +14,7 @@
   width: 100%;
   height: auto;
   max-height: 270px;
+  cursor: pointer;
 }
 
 .movie-card-actions button {
@@ -23,7 +24,7 @@
   border: 1px solid #ccc;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
   position: absolute;
   bottom: 26%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
@@ -34,6 +35,7 @@
 }
 .movie-card-actions button.right {
   right: 23%;
+  font-weight: 900;
 }
 
 .movie-card-title {
@@ -43,6 +45,7 @@
   left: 50%;
   transform: translateX(-50%);
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .movie-card-times-tickets {

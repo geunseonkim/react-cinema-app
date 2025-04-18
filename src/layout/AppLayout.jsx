@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import "./AppLayout.css";
 import { Link } from "react-router-dom";
+import Footer from "./footer/Footer";
 
 const AppLayout = () => {
   const [keyword, setKeyword] = useState("");
@@ -40,6 +41,7 @@ const AppLayout = () => {
       <div className="main-content">
         <Outlet />
       </div>
+      <Footer />
     </>
   );
 };

@@ -12,12 +12,7 @@ const PopularMovies = () => {
 
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) return <alert>{error.message}</alert>;
-  return (
-    <div>
-      {/* <h2>Popular</h2> */}
-      {/* <MovieCard /> */}
-    </div>
-  );
+  return <div></div>;
 };
 
 export default PopularMovies;

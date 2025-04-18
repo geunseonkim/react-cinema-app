@@ -7,7 +7,7 @@ const MovieTrailer = ({ itemId }) => {
   const { data, isLoading, isError, error } = useMovieTrailerQuery({
     movie_id: itemId,
   });
-  console.log("ded", data);
+
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) return <alert>{error.message}</alert>;
 
