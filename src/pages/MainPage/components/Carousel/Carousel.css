@@ -34,7 +34,7 @@
 
 .carousel-movie-info {
   position: absolute;
-  color: white;
+  color: black;
   top: 50%;
   transform: translateY(-50%);
   /* width: 40%; */
