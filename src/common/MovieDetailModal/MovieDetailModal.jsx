@@ -27,7 +27,13 @@ const MovieDetailModal = ({ item, type, handleCloseModal }) => {
         </button>
 
         {type === "play" ? (
-          <MovieTrailer itemId={item.id} />
+          <div className="modal-wrapper">
+            <MovieTrailer itemId={item.id} />
+            <div className="modal-share-button share-button-trailer">
+              <p>Add to Watchlist</p>
+              <p>Share</p>
+            </div>
+          </div>
         ) : (
           <div className="modal-content">
             <div className="modal-content-detail">
